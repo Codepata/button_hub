@@ -1,12 +1,27 @@
-import 'package:flutter_test/flutter_test.dart';
-
+import 'package:flutter/material.dart';
 import 'package:button_hub/button_hub.dart';
 
 void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
-  });
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.grey.shade200,
+        body: Center(
+          child: Button73(
+            text: "Click Me!",
+            onTap: () {
+              print("Button Pressed!");
+            },
+          ),
+        ),
+      ),
+    );
+  }
 }
